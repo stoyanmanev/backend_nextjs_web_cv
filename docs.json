@@ -1,0 +1,67 @@
+
+
+query{
+  currentUser{
+    _id,
+    username,
+    fullname,
+    email,
+    password
+  }
+},
+query{
+users{
+  _id,
+  username,
+  fullname,
+  email,
+  password,
+  lastLogin
+}
+},
+query{
+user(_id: "xxxxx"){
+  _id,
+  username,
+  fullname,
+  email,
+  password
+}
+},
+
+mutation{
+login(email: "xxxx.xxx.xxx@xxx.xxx", password: "xxxx")
+},
+mutation{
+editUser(_id: "xxxxx", data:{
+  email: "xxxx@xxxx.com"
+}) {
+  _id,
+  username,
+  fullname,
+  email,
+  password
+}
+},
+
+mutation {
+deleteUser(_id: "xxxx") {
+  _id,
+  username,
+  fullname,
+  email,
+  password
+}
+},
+mutation {
+createUser(data: {username:"d.radoslavov", fullname:"Daniel Radoslavov", email:"d.radoslavov@eurovis.com", password:"123456"}) {
+  _id,
+  username,
+  fullname,
+  email,
+  password
+}
+}
+
+
+// https://overtime--api.herokuapp.com/graphql
